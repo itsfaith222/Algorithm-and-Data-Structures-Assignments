@@ -39,7 +39,7 @@ int main() {
 
     //  Enter your code here for the moveToFront strategy
 
-    while(count < n, fscanf(fp, "%d", &num) == 1){
+    while(count < n && fscanf(fp, "%d", &num) == 1){
         if(isEmpty(s)){
             NodePtr node = search(s, num);
             if(node != NULL){
