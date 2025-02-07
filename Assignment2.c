@@ -40,7 +40,7 @@ int main() {
 
     while(fscanf(fp, "%d", &num) == 1){
         if(isEmpty(s)){
-            int node = search(s, num);
+            NodePtr node = search(s, num);
             if(node != NULL){
                 removeFromList(s, node);
             }
