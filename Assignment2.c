@@ -36,8 +36,17 @@ int main() {
     start = clock();
 
     //  Enter your code here for the moveToFront strategy
+    int num;
 
-
+    while(fscanf(fp, "%d", &num) == 1){
+        if(isEmpty(s)){
+            int node = search(s, num);
+            if(node != NULL){
+                removeFromList(s, node);
+            }
+        }
+        insertAtFront(s, num);
+    }
 
     
     executionTime = (double)(clock() - start) / CLOCKS_PER_SEC * 1000;
