@@ -88,6 +88,27 @@ void insertAtFront(List S, ListData new_data) {
    	//Allocating memory for the new node
 	NodePtr np = (NodePtr) malloc (sizeof(Node));
 
+	//insert data into the node
+	np->data = new_data;
+	np->prev = NULL;
+
+	if(isEmpty(S)){
+		np->next = NULL;
+		S->head = np;
+		S->tail = np;
+	}else{
+		//new node next connects to head
+		np->next = S->head;
+
+		//old head prev points to the new node
+		S->head->prev = np;
+
+		//update the new node to be the head
+		S->head = np;
+
+	}
+
+	S->size ++;
 }
 		 
  
@@ -95,6 +116,17 @@ void insertAtFront(List S, ListData new_data) {
 // containing new_data if found, and NULL otherwise 
 NodePtr search(List S, ListData new_data) {
      //ADD YOUR CODE HERE TO COMPLETE THIS FUNCTION:
+
+	 NodePtr current_node = S->head;
+
+	 if(!isEmpty(S)){
+		while(current_node != NULL){
+			if(new_data == current_node->data){
+				return current_node;
+				current_node = current_node->next;
+			}
+		}
+	 }
 
 	return NULL;
 }
@@ -105,5 +137,31 @@ void removeFromList(List S, NodePtr np) {
 	//ADD YOUR CODE HERE TO COMPLETE THIS FUNCTION
 	//Remember to check first if list is empty; don't forget to free memory 
 	//and decrement size if necessary.
-	
-} 		 
+
+	if(isEmpty(S)){
+		printf("Error: List is empty.");
+		return;
+	}
+	if(np == NULL){
+		printf("Node is null");
+		return;
+	}
+
+	//if node is the head elif node is tail else node is in the middle
+	if (np = S->head){
+		S->head = np->next;
+		np->next->prev = NULL;
+	}else if(np = S->tail){
+		S->tail = np->prev;
+		np->prev->next = NULL;
+	}else{
+		np->prev->next = np->next->prev;
+		np->next->prev = np->prev->next;
+	}
+
+	free(np);
+
+	S->size --;
+
+
+}
