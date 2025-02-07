@@ -19,6 +19,8 @@ int main() {
     double executionTime;
     FILE *fp;
     //Of course, you may add more variables as needed
+    int num;
+    int count = 0;
 
     printf("Please enter the name of the text file you wish to read from: ");   
     scanf("%s", filename);
@@ -36,9 +38,8 @@ int main() {
     start = clock();
 
     //  Enter your code here for the moveToFront strategy
-    int num;
 
-    while(fscanf(fp, "%d", &num) == 1){
+    while(count < n, fscanf(fp, "%d", &num) == 1){
         if(isEmpty(s)){
             NodePtr node = search(s, num);
             if(node != NULL){
@@ -46,6 +47,7 @@ int main() {
             }
         }
         insertAtFront(s, num);
+        count ++;
     }
 
     
