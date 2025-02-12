@@ -2,8 +2,8 @@
 * This file defines the List data structure as implemented by a doubly-linked list 
 * A List stores a list of <int>
 *
-* Modified by: 
-* Date:
+* Modified by: Mahimaa Vardini BR, Faith Aikhionbare, Samarpita Sharma  
+* Date: Thursday February 13th, 2025
 *************************************************************************************/
 
 #include<stdbool.h>

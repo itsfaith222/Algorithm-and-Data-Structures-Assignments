@@ -3,8 +3,8 @@
 * which is useful for caching, data compression, and many other applications where items 
 * that have been recently accessed are more likely to be re-accessed.  
 *
-* Modified by:
-* Date:
+* Modified by: Mahimaa Vardini BR, Faith Aikhionbare, Samarpita Sharma  
+* Date: Thursday, February 13th, 2025
 *************************************************************************************/
 #include<stdbool.h>
 #include<stdlib.h>
