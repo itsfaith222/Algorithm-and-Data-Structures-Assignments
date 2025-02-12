@@ -55,8 +55,8 @@ int main() {
     printf("Time taken to insert %d numbers: %.4f seconds\n", n, executionTime);
     
     //comment out the following 2 lines when testing with large n
-    printf("List after reading from the file:\n");
-    displayList(s);   
+    //printf("List after reading from the file:\n");
+    //displayList(s);   
     
     freeList(s);
     fclose(fp);
