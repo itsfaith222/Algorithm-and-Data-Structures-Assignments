@@ -40,7 +40,7 @@ int main() {
     //  Enter your code here for the moveToFront strategy
 
     while(count < n && fscanf(fp, "%d", &num) == 1){ //scan the file line by line
-        if(isEmpty(s)){ //check if file is empty
+        if(!isEmpty(s)){ //check if file is empty
             NodePtr node = search(s, num);  //search for number and put it in node pointer
             if(node != NULL){ //check if node pointer from search holds an address or is empty
                 removeFromList(s, node); //removes the node with the address of the node. 

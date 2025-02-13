@@ -126,7 +126,7 @@ NodePtr search(List S, ListData new_data) {
 			if(new_data == current_node->data){ 
 				return current_node; //return node address if currentNode is same as data we are looking for.
 			}
-			current_node = current_node->next; //points to the next node.
+			current_node == current_node->next; //points to the next node.
 		}
 	 }
 
@@ -152,10 +152,10 @@ void removeFromList(List S, NodePtr np) {
 	}
 
 	//if node is the head remove else if node is tail remove else node is in the middle and we remove
-	if (np = S->head){
+	if (np == S->head){
 		S->head = np->next;
 		np->next->prev = NULL;
-	}else if(np = S->tail){
+	}else if(np == S->tail){
 		S->tail = np->prev;
 		np->prev->next = NULL;
 	}else{
