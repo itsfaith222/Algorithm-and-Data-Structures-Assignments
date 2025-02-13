@@ -19,8 +19,8 @@ int main() {
     double executionTime;
     FILE *fp;
     //Of course, you may add more variables as needed
-    int num;
-    int count = 0;
+    int num; //variable to hold the number we read from the file
+    int count = 0; //to keep count of how many lines we read in the file.
 
     printf("Please enter the name of the text file you wish to read from: ");   
     scanf("%s", filename);
@@ -39,15 +39,15 @@ int main() {
 
     //  Enter your code here for the moveToFront strategy
 
-    while(count < n && fscanf(fp, "%d", &num) == 1){
-        if(isEmpty(s)){
-            NodePtr node = search(s, num);
-            if(node != NULL){
-                removeFromList(s, node);
+    while(count < n && fscanf(fp, "%d", &num) == 1){ //scan the file line by line
+        if(isEmpty(s)){ //check if file is empty
+            NodePtr node = search(s, num);  //search for number and put it in node pointer
+            if(node != NULL){ //check if node pointer from search holds an address or is empty
+                removeFromList(s, node); //removes the node with the address of the node. 
             }
         }
-        insertAtFront(s, num);
-        count ++;
+        insertAtFront(s, num); // inserts the data into the front of the list. 
+        count ++; //increses the count variable. 
     }
 
     
@@ -55,8 +55,8 @@ int main() {
     printf("Time taken to insert %d numbers: %.4f seconds\n", n, executionTime);
     
     //comment out the following 2 lines when testing with large n
-    //printf("List after reading from the file:\n");
-    //displayList(s);   
+    printf("List after reading from the file:\n");
+    displayList(s);   
     
     freeList(s);
     fclose(fp);

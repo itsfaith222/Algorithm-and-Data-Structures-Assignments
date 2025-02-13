@@ -90,12 +90,12 @@ void insertAtFront(List S, ListData new_data) {
 
 	//insert data into the node
 	np->data = new_data;
-	np->prev = NULL;
+	np->prev = NULL; //prev of data is null because this is going to be the new head node.
 
-	if(isEmpty(S)){
-		np->next = NULL;
-		S->head = np;
-		S->tail = np;
+	if(isEmpty(S)){ //check if list is empty
+		np->next = NULL; //node pointer next is null
+		S->head = np; // head points to new node
+		S->tail = np; //tail points to new node
 	}else{
 		//new node next connects to head
 		np->next = S->head;
@@ -108,6 +108,7 @@ void insertAtFront(List S, ListData new_data) {
 
 	}
 
+	//increses the size of the list 
 	S->size ++;
 }
 		 
@@ -117,14 +118,15 @@ void insertAtFront(List S, ListData new_data) {
 NodePtr search(List S, ListData new_data) {
      //ADD YOUR CODE HERE TO COMPLETE THIS FUNCTION:
 
-	 NodePtr current_node = S->head;
+	 NodePtr current_node = S->head; //make a pointer that points to the head
 
-	 if(!isEmpty(S)){
+	 if(!isEmpty(S)){//check if list is empty 
+		//uses the pointer created to point to each node in the list
 		while(current_node != NULL){
-			if(new_data == current_node->data){
-				return current_node;
-				current_node = current_node->next;
+			if(new_data == current_node->data){ 
+				return current_node; //return node address if currentNode is same as data we are looking for.
 			}
+			current_node = current_node->next; //points to the next node.
 		}
 	 }
 
@@ -138,16 +140,18 @@ void removeFromList(List S, NodePtr np) {
 	//Remember to check first if list is empty; don't forget to free memory 
 	//and decrement size if necessary.
 
+	//if list is empty we return
 	if(isEmpty(S)){
 		printf("Error: List is empty.");
 		return;
 	}
+	//if node address is null return
 	if(np == NULL){
 		printf("Node is null");
 		return;
 	}
 
-	//if node is the head elif node is tail else node is in the middle
+	//if node is the head remove else if node is tail remove else node is in the middle and we remove
 	if (np = S->head){
 		S->head = np->next;
 		np->next->prev = NULL;
@@ -155,6 +159,7 @@ void removeFromList(List S, NodePtr np) {
 		S->tail = np->prev;
 		np->prev->next = NULL;
 	}else{
+		//rearranges the pointer to disconnect the node from the list.
 		np->prev->next = np->next->prev;
 		np->next->prev = np->prev->next;
 	}
