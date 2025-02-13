@@ -126,7 +126,7 @@ NodePtr search(List S, ListData new_data) {
 			if(new_data == current_node->data){ 
 				return current_node; //return node address if currentNode is same as data we are looking for.
 			}
-			current_node == current_node->next; //points to the next node.
+			current_node = current_node->next; //points to the next node.
 		}
 	 }
 
