@@ -120,7 +120,7 @@ NodePtr search(List S, ListData new_data) {
 
 	 NodePtr current_node = S->head; //make a pointer that points to the head
 
-	 if(!isEmpty(S)){//check if list is empty 
+	 if(!isEmpty(S)){//check if list is not empty to look for data
 		//uses the pointer created to point to each node in the list
 		while(current_node != NULL){
 			if(new_data == current_node->data){ 
@@ -160,8 +160,8 @@ void removeFromList(List S, NodePtr np) {
 		np->prev->next = NULL;
 	}else{
 		//rearranges the pointer to disconnect the node from the list.
-		np->prev->next = np->next->prev;
-		np->next->prev = np->prev->next;
+		np->prev->next = np->next;
+		np->next->prev = np->prev;
 	}
 
 	free(np);
